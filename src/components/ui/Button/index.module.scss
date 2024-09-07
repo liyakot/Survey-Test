@@ -1,0 +1,35 @@
+@import '../../../styles/base/variables';
+@import '../../../styles/base/mixins';
+
+.button {
+  height: 4rem;
+  width: 20.625rem;
+  border-radius: $radius;
+  box-shadow: 2px 2px 6px 0 $shadow-dark;
+  border: 1px solid $border;
+  cursor: pointer;
+  color: $black;
+  font-size: 1rem;
+  transition: all 0.2s ease-in-out;
+
+  &:active,
+  &:hover,
+  &:focus {
+    @include gradient-background();
+    color: $text-light;
+  }
+
+  &.light {
+    background-color: $text-light;
+    box-shadow: 0 4px 4px 0 $shadow-light;
+    color: $primary;
+
+    &:active,
+    &:hover,
+    &:focus {
+      @include gradient-background();
+      color: $text-light;
+      box-shadow: 2px 2px 6px 0 $shadow-dark;
+    }
+  }
+}
